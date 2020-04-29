@@ -1,0 +1,30 @@
+#Serves as a template for 'php vendor/bin/homestead make' command.
+ip: 192.168.10.15
+memory: 2048
+cpus: 2
+provider: virtualbox
+authorize: ~/.ssh/id_rsa.pub
+keys:
+    - ~/.ssh/id_rsa
+#If you wanted to map additional folders
+#folders:
+#    -
+#        map: /home/YOUR_USER/YOUR_PROJECT_FOLDER
+#        to: /home/vagrant/YOUR_PROJECT_FOLDER
+sites:
+    -
+        #map: dev.YOUR_SITE_NAME.ca
+        map: dev.homestead.ca
+        #to: /home/vagrant/YOUR_PROJECT_FOLDER/public
+        to: /home/vagrant/homestead-example/public
+databases:
+    - homestead
+features:
+    -
+        mariadb: true
+    -
+        ohmyzsh: false
+    -
+        webdriver: false
+name: yourprojectname-dev
+hostname: yourprojectname-dev
